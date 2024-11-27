@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Códigos Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.39.0/min/vs/loader.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
+</head>
+<body onload="initialize()">
+  <div class="container">
+    <div id="language-selection" class="language-selection">
+      <h1>Escolha a Linguagem ou Carregue um Projeto</h1>
+      <button id="load-project-btn">Carregar Projeto</button>
+      <input type="file" id="file-input" class="hidden" multiple webkitdirectory/>
+      <br>
+      <label for="language-select">Selecione a Linguagem:</label>
+      <select id="language-select">
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="cpp">C++</option>
+        <option value="java">Java</option>
+      </select>
+      <br>
+      <button id="start-editor-btn">Iniciar Editor</button>
+    </div>
+
+    <div id="editor-container" class="hidden">
+      <header>
+        <h1>Editor de Códigos</h1>
+        <div>
+          <span id="language-display">Linguagem: Nenhuma</span>
+        </div>
+      </header>
+
+      <div class="container">
+        <div id="file-explorer">
+          <div id="file-list"></div>
+        </div>
+
+        <div class="editor-container">
+          <div id="editor"></div>
+          <div class="output-container" id="output">
+            <div class="terminal-line">> Pronto para rodar o código!</div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <button id="run-btn">Executar Código</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
